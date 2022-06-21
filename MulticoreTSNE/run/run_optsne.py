@@ -12,6 +12,7 @@ default_result_path = "tsne_results.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument("--data", help='Path to data file')
 parser.add_argument("--n_threads", help='Number of threads', default=1, type=int)
+parser.add_argument("--n_components", help='Number of dimensions of the embedded space', default=2, type=int)
 parser.add_argument("--learning_rate", help='Learning rate', default=-1, type=float)
 parser.add_argument("--n_iter_early_exag", help='Number of iterations out of total to spend in early exaggeration', default=250, type=int)
 parser.add_argument("--n_iter", help='Total number of iterations', default=1000, type=int)
@@ -47,6 +48,7 @@ if args.learning_rate == -1:
 
 tsne = TSNE(n_jobs=int(args.n_threads),
             learning_rate=args.learning_rate,
+            n_components = args.n_components,
             n_iter=args.n_iter,
             n_iter_early_exag=args.n_iter_early_exag,
             perplexity=args.perp,
