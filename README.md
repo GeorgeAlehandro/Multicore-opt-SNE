@@ -67,6 +67,7 @@ A script `run_optsne.py` is included that allows this package to be run from the
 Add these flags followed directly by values to run_optsne.py to modify algorithm behavior. E.g., `python2 MulticoreTSNE/run/run_optsne.py --optsne --data bendall20k-data.csv --n_threads 4 --perp 50 --n_obs 5000 --verbose 20`. These flags describe arguments to the command line script only. They generally map to the python package itself but some have slightly different names.
 - `--data` is the filepath to the data CSV file to be run through the algorithm.
 - `--n_threads` is the number of CPU threads to use.
+- `--n_components` is the number of dimensions in which the data is embedded after dimensionality reduction.
 - `--learning_rate` is the learning rate (aka "eta"). This is set automatically of running in opt-SNE mode but can be overridden if given as an argument.
 - `--n_iter_early_exag` is the number of iterations out of total to spend in early exaggeration. If running in opt-SNE mode this argument is ignored.
 - `--n_iter` is the total number of iterations. If running in opt-SNE mode this argument is used to stop the run if opt-SNE has not already done so by this point.
